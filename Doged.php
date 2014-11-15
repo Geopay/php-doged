@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Project : php-doge library
- * Summary : A basic php library to talk with dogecoind 
+ * Project : php-doged library
+ * Summary : A basic php library to talk with dogecoindarkd 
  *
- * Source  : https://github.com/mkaz/php-doge
+ * Source  : forked from https://github.com/mkaz/php-doge
  *
  * Author  : Marcus Kazmierczak (@mkaz)
  * License : GPL vv
@@ -12,7 +12,7 @@
 
 require_once dirname(  __FILE__ ) . '/jsonRPCClient.php';
 
-class Doge  {
+class Doged  {
 
     private $client;
 
@@ -35,9 +35,9 @@ class Doge  {
 
 
     /**
-     * Creates or Retrievs a Dogecoin address for a account name
+     * Creates or Retrieves a DogecoinDark address for a account name
      * An account is just a string used as key to identify account,
-     * A Dogecoin address is return which can receive coins
+     * A DogecoinDark address is returned which can receive coins
      *
      * @param string $account some string used as key to account
      * @return string dogecoin address 
@@ -48,7 +48,7 @@ class Doge  {
 
 
     /**
-     * Given a Dogecoin address returns the account name
+     * Given a DogecoinDark address returns the account name
      *
      * @param string $address dogecoin addresss
      * @return string account name key
@@ -63,7 +63,7 @@ class Doge  {
      * account name for further API use.
      *
      * @param string $account account name
-     * @return string dogecoin address
+     * @return string dogecoindark address
      */
     function get_new_address( $account='' ) {
         return $this->client->getnewaddress( $account );
@@ -71,7 +71,7 @@ class Doge  {
 
 
     /**
-     * Get list of all accounts on in this dogecoind wallet
+     * Get list of all accounts on in this dogecoindarkd wallet
      *
      * @return array strings of account => balance
      */
@@ -90,7 +90,7 @@ class Doge  {
     }
 
     /**
-     * Associate dogecoin address to account string
+     * Associate dogecoindark address to account string
      *
      * @param string $address dogecoin address
      * @param string $account account string
@@ -113,7 +113,7 @@ class Doge  {
 
     /**
      * Move coins from one account on wallet to another
-     * Both accounts are local to this dogecoind instance
+     * Both accounts are local to this dogecoindarkd instance
      *
      * @param string $account_from account moving from
      * @param string $account_to account moving to
@@ -126,10 +126,10 @@ class Doge  {
 
 
     /**
-     * Send coins to any Dogecoin Address
+     * Send coins to any Dogecoindark Address
      *
      * @param string $account account sending coins from
-     * @param string $to_address dogecoin address sending to
+     * @param string $to_address dogecoindark address sending to
      * @param float $amount amount of coins to send
      * @return string txid
      */
@@ -139,7 +139,7 @@ class Doge  {
     }
 
 	/**
-	 * Validate a given Dogecoin Address
+	 * Validate a given Dogecoindark Address
 	 * @param string $address to validate
 	 * @return array with the properties of the address
 	 */
