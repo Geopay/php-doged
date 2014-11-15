@@ -1,42 +1,45 @@
 
-# php-doge
+# php-doged
 
-A basic PHP library to talk to a dogecoind daemon to get you started in your doge project to take us to the moon.
+A basic PHP library to talk to a dogecoindarkd daemon to get you started in your doged project to take us to the dark side of the moon.
 
-I haven't implemented all of the end points of the API, focused on account and moving of coins. I'm trying to make sure the library is documented and includes examples so its easy to use before being complete.  Patches welcome.
+All of the end points of the API are not implemented, it is currently focused on account and moving of coins. I'm trying to make sure the library is documented and includes examples so its easy to use before being complete.  Patches welcome.
 
 
 ## Requirements
 
-Requires **dogecoind** to already be installed and running on your local server or reachable by your server.  
+Requires **dogecoindarkd** to already be installed and running on your local server or reachable by your server.  
 
-Get dogecoind source from: https://github.com/dogecoin/dogecoin
+Get dogecoindarkd source from: https://github.com/doged/dogedsource
 
-Also, here's a [guide building dogecoind](http://www.dogeco.in/wiki/index.php/Compiling_Dogecoind_on_Ubuntu/Debian) on debian-based system.  
-
+compiling the coin is as easy as going into the dogedsource/src directory and typing:
+git clone https://github.com/doged/dogedsource
+cd dogedsource
+cd src
+make -f makefile.unix
 
 ## Usage:
 
 Example use, see examples.php for more
 
 ```
-require "./Doge.php";
+require "./Doged.php";
 
 $config = array(
-    'user' => 'dogecoinrpc',
-    'pass' => '--password--',
+    'user' => 'dogecoindarkrpc',
+    'pass' => 'rpcpassword',
     'host' => '127.0.0.1',
     'port' => '22555' );
 
 // create client conncetion
-$doge = new Doge( $config );
+$doge = new Doged( $config );
 
 // create a new address
-$address = $doge->get_address( 'mkaz' );
+$address = $doged->get_address( 'mkaz' );
 print( $address );
 
 // check balance 
-print( "mkaz: " . $doge->get_balance( 'mkaz' ) );
+print( "mkaz: " . $doged->get_balance( 'mkaz' ) );
 
 // send money externally (withdrawl?)
 $doge->send( 'mkaz', 'DQpwDDrW8gqJJWiW7TvXgNtbfD5Du94wy3', 100 );
@@ -46,8 +49,6 @@ $doge->send( 'mkaz', 'DQpwDDrW8gqJJWiW7TvXgNtbfD5Du94wy3', 100 );
 
 ## About
 
-Library created by Marcus Kazmierczak, http://mkaz.com/
-
-Donations accepted: DQpwDDrW8gqJJWiW7TvXgNtbfD5Du94wy3
+Forked from library created by Marcus Kazmierczak, http://mkaz.com/
 
 
