@@ -29,10 +29,10 @@ $config = array(
     'user' => 'dogecoindarkrpc',
     'pass' => 'rpcpassword',
     'host' => '127.0.0.1',
-    'port' => '22555' );
+    'port' => '20102' );
 
 // create client conncetion
-$doge = new Doged( $config );
+$doged = new Doged( $config );
 
 // create a new address
 $address = $doged->get_address( 'mkaz' );
@@ -42,7 +42,7 @@ print( $address );
 print( "mkaz: " . $doged->get_balance( 'mkaz' ) );
 
 // send money externally (withdrawl?)
-$doge->send( 'mkaz', 'DQpwDDrW8gqJJWiW7TvXgNtbfD5Du94wy3', 100 );
+$doged->send( 'mkaz', 'DPNC2H2pYUCSebQ992GyeRTRuWw3hCTBwD', 1000 );
 
 ```
 
