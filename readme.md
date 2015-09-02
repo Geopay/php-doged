@@ -1,4 +1,4 @@
-
+![php-doged](http://i.imgur.com/1ZsHcUo.png)
 # php-doged
 
 A basic PHP library to talk to a dogecoindarkd daemon to get you started in your doged project to take us to the dark side of the moon.
@@ -12,7 +12,7 @@ Requires **dogecoindarkd** to already be installed and running on your local ser
 
 Get dogecoindarkd source from: https://github.com/doged/dogedsource
 
-compiling the coin is as easy as going into the dogedsource/src directory and typing:
+compiling the coin is as easy as going into the dogedsource/src directory and typing (after you have dependencies installed):
 git clone https://github.com/doged/dogedsource
 cd dogedsource
 cd src
