@@ -5,7 +5,7 @@
 require "./Doged.php";
 
 $config = array(
-    'user' => 'dogecoindarkrpc',
+    'user' => 'dogecoindarkrpcuser',
     'pass' => 'rpcpassword',
     'host' => '127.0.0.1',
     'port' => '20102' );
@@ -26,10 +26,10 @@ print( "mkaz: " . $doged->get_balance( 'mkaz' ) );
 
 // move money from accounts in wallet
 // moves from 'thianh' to account 'mkaz'
-$doged->move( 'thianh', 'mkaz', 10000 );
+$doged->move( 'from name', 'to name', 10000 );
 
 // send money externally (withdrawl?)
 // send from account to external address
-$doged->send( 'mkaz', 'DNYJ2ANdx1GL4sbCyikaVgYrf2GfiCtf8N', 100 );
+$doged->send( 'name', 'DMheu3hJtEx84DBTKjedKmSwekYvWgsEM3', 10 );
 
 
